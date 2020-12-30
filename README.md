@@ -7,6 +7,10 @@ More information on [Udemy Course - Rasa for Beginners](https://www.udemy.com/co
 The syntax in stories and domain yaml files was adapted so it runs with the following Rasa versions :
 ![Rasa version](images/rasa-version.png)
 
+### TESTING
+- Making master branch with a wrong Rasa layout on purpose to test IVC
+- Correct Rasa layout is on "test-branch"
+
 ### Run
 Once inside the project folder:
 - Open two terminal windows and on the first one give the command :
