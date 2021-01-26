@@ -3,27 +3,27 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- deny
+- goodbye
 - greet
+- affirm
 - inform
 - ask_eat_healthy
 - ask_lower_stress
 - mood_unhappy
-- goodbye
-- affirm
-- deny
 - mood_great
 - bot_challenge
 - ask_exercise
 - out_of_scope
 - thank_you
 entities:
-  - confirm_exercise
-  - diet
-  - exercise
-  - goal
-  - mood_unhappy
-  - sleep
-  - stress
+- confirm_exercise
+- diet
+- exercise
+- goal
+- mood_unhappy
+- sleep
+- stress
 slots:
   confirm_exercise:
     type: bool
@@ -39,11 +39,11 @@ slots:
     influence_conversation: true
   stress:
     type: categorical
-    values:
-      - low
-      - medium
-      - high
     influence_conversation: true
+    values:
+    - low
+    - medium
+    - high
   goal:
     type: text
     influence_conversation: true
@@ -51,8 +51,8 @@ responses:
   utter_greet:
   - text: Hi! It's time for your daily wellness check. Tracking healthy habits is a great way to measure your progress over time. Would you like to answer a few questions about your health?
   utter_cheer_up:
-  - text: 'Here is something to cheer you up:'
-    image: https://i.imgur.com/nGF1K8f.jpg
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
   utter_did_that_help:
   - text: Did that help you?
   utter_happy:
@@ -94,12 +94,17 @@ responses:
   - text: Sorry, I don't quite understand. Do you want to continue?
   utter_out_of_scope:
   - text: Do you want to continue with the survey?
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase
 actions:
-  - utter_ask_confirm_exercise
-  - utter_cheer_up
-  - utter_did_that_help
-  - utter_diet_info
-  - utter_greet
-  - utter_stress_info
+- greet
+- health_form
+- utter_ask_confirm_exercise
+- utter_cheer_up
+- utter_did_that_help
+- utter_diet_info
+- utter_goodbye
+- utter_greet
+- utter_stress_info
 forms:
-  - health_form
+  health_form: {}
